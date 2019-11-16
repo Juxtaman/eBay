@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable='yes', initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" type ="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" type="text/css" />
+	<title>The Place for all your gaming need</title>
+	<style> html, body { width: 100%; overflow-x: hidden; margin: 0; font-family: 'Roboto Condensed', sans-serif; background-color: gainsboro;}
+	div, a, header, img, ul{ max-width: 100%; box-sizing: border-box;}
+	.grid-con {display: grid; grid-template-rows: 15vh 7.5vh auto; min-height: 100vh; font-size: 3.5vw;}
+	a, img { max-height: 100%; width: auto; display: block; border: none;}
+	a { text-decoration: none; color: inherit;}
+    .header {display: flex; justify-content: flex-start; background-color: lightseagreen; font-size: 3vh; height: 15vh;}
+	.logo-wrap { width: 60%; display: flex; justify-content: space-evenly;} .logo-image {margin: auto;  } .logo-wrap>* {width: auto; min-width:20%;} 
+	i { font-size: 1.33em;} 
+	.head-side-con { width: 20%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: darkslategrey;}
+	.store-link {display: flex; flex-direction: column; align-items: center;}
+	.nav-bar {display: flex; height: 7.5vh; justify-content: space-evenly; background-color: dimgray; border-top: dotted white 2px; background-color: slategrey; box-shadow: 0 5px 5px black;}
+	.nav-wrap {flex-grow: 1; max-width: 33.33%; }
+	.nav-menu-wrap {padding: 0; margin: 0; list-style-type: none;} 
+	.nav-lab { display: flex; letter-spacing: 0vw; height: 100%; justify-content: center; align-items: center;  transition: background-color 1s, font-size 1s, color 1s, letter-spacing 1s; }
+		@keyframes lettersinout {
+	  0% {
+	 
+		}
+	  50% {
+	    letter-spacing: -1.25vw;
+	  }
+	  100% {
+	    letter-spacing: 0.3vw;
+		}
+		}
+	.nav:checked ~ label { background-color: teal; animation-duration: 2s; animation-name: lettersinout; color: white; letter-spacing: 0.3vw;}
+	.nav { display: none; }
+	.nav ~ ul { max-width: 33.33%; box-shadow: 0 5px 5px slateblue; position: absolute; max-height: 0; overflow-y: hidden; transition: max-width 0.5s ease-in-out, max-height 1s ease-in-out 0.85s, opacity 0.8s ease-in-out 1.25s, background-color 1s ease-in-out; width: 50%; display: flex; flex-direction: column; opacity: 0; border-radius: 0 0 50px 0; border: solid dimgrey 2px; border-top: 0; background-color: slategrey;}	
+	.nav:checked ~ ul { max-width: 45%; max-height: 250px; opacity: 1; background-color: lightseagreen; transition: max-width 0.5s ease-in-out 1.625s, max-height 1s ease-in-out 0.85s, opacity 0.8s ease-in-out 0.85s, background-color 1s ease-in-out; }
+	.nav ~ ul > li { padding: 0 10%; max-height: 250px; overflow-y: hidden; transition: max-height 2s ease-in-out 1s, padding 0.8s ease-in-out 1s; }
+	.nav:checked ~ ul > li{max-height: 250px; padding: 10%;}
+	.main-sec { display: flex; flex-direction: column; justify-content: flex-start;}
+	.main-sec-wrap { margin-top: 6.25vh; width: 80%; margin: 6.25vh auto 0 auto; height: auto; }
+	.main-sec { background-color: whitesmoke;}
+	.sec-head {box-shadow: 2px 2px 5px; color: darkslategrey; height: 5vh; display: flex; align-items: center; justify-content: flex-start; padding-left: 5%; background-color: lightseagreen;}
+	.text-sec {box-shadow: 2px 2px 5px; min-height: 50vh; border: solid 1px slategrey; border-top: 0;}
+	.head-icon-wrap { display: flex; align-items: center; justify-content: center; padding-right: 5%; }
+	.head-icon-wrap > i { font-size: 1.375em !important;}
+	 h1 { font-size: 1em; }
+	.nav-3-lab ~ ul { right: 0; border-radius: 0 0 0 50px; padding-left: 5%;}
+	</style>
+
+  </head>
+  <body>
+    <div class="grid-con" itemscope itemtype="http://schema.org/product">
+	  <header class="header">
+	    <div class="head-side-con">
+		  <i class="material-icons">
+			store
+		  </i>
+		</div>
+		<div class="logo-wrap" itemprop="brand" itemscope itemtype="http://schema.org/brand">
+		  <span></span>
+		  <a class="home-link logo-link" href="https://www.ebay.co.uk/str/retrodogskennel" itemprop="url">
+		    <img class="logo-image" itemprop="logo" src="https://i.ibb.co/ZMHwq3y/Retrod0g.png" alt="Retrodog Logo" title="Retrodog: Feed Your Game Dog" />
+		  </a>
+		  <span></span>
+		</div>
+		<div class="store-wrap head-side-con" itemprop="brand" itemscope itemtype="http://schema.org/brand">
+		  <a class="home-link store-link" href="https://www.ebay.co.uk/str/retrodogskennel" itemprop="url">
+		    <i class="material-icons">
+			  store
+			</i>
+			<span>Store</span>
+		  </a>
+		</div>
+	  </header>
+	  <nav class="nav-bar">
+	    <div class="nav-wrap nav-1-wrap">
+		  <input class="nav" id="nav-1" type="radio" name="cur"></input>
+	  	  <label for="nav-1" class="nav-1-lab nav-lab"><span>Shop Categories</span></label>
+	        <ul class="nav-menu-wrap nav-menu-1-wrap">
+		      <li class="nav-1-el nav-el"><a href="">PS4</a></li>
+		      <li class="nav-1-el nav-el"><a href="">Xbox One</a></li>
+		      <li class="nav-1-el nav-el"><a href="">Nintendo Switch</a></li>
+		      <li class="nav-1-el nav-el"><a href="">Multi-platform Items</a></li>
+		    </ul>
+		</div>
+	    <div class="nav-wrap nav-2-wrap">
+		  <input class="nav" id="nav-2" type="radio" name="cur"></input>
+	  	  <label for="nav-2" class="nav-2-lab nav-lab">Shop Categories</label>
+	        <ul class="nav-menu-wrap nav-menu-2-wrap">
+		      <li class="nav-2-el nav-el"><a href="">PS4</a></li>
+		      <li class="nav-2-el nav-el"><a href="">Xbox One</a></li>
+		      <li class="nav-2-el nav-el"><a href="">Nintendo Switch</a></li>
+		      <li class="nav-2-el nav-el"><a href="">Multi-platform Items</a></li>
+		    </ul>
+		</div>
+		<div class="nav-wrap nav-3-wrap">
+		  <input class="nav" id="nav-3" type="radio" name="cur"></input>
+	  	  <label for="nav-3" class="nav-3-lab nav-lab">Shop Categories</label>
+	        <ul class="nav-menu-wrap nav-menu-3-wrap">
+		      <li class="nav-3-el nav-el"><a href="">PS4</a></li>
+		      <li class="nav-3-el nav-el"><a href="">Xbox One</a></li>
+		      <li class="nav-3-el nav-el"><a href="">Nintendo Switch</a></li>
+		      <li class="nav-3-el nav-el"><a href="">Multi-platform Items</a></li>
+		    </ul>
+		</div>
+	  </nav>
+	  <main class="main-sec-wrap">
+	    <section class="main-sec">
+		  <header class="sec-head desc-head"><span class="head-icon-wrap"><i class="material-icons">info</i></span>
+		  <h1>Product Description:</h1></header>
+		  <div class="text-sec desc-text">
+		  </div>
+		</section>
+	  </main>
+
