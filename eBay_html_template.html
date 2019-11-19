@@ -7,9 +7,9 @@
     <link rel="stylesheet" type ="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" type="text/css" />
 	<title>The Place for all your gaming need</title>
-	<style> html, body { width: 100%; overflow-x: hidden; margin: 0; font-family: 'Roboto Condensed', sans-serif; background-color: gainsboro;}
+	<style> html, body { width: 100vw; overflow-x: hidden; margin: 0; font-family: 'Roboto Condensed', sans-serif; background-color: gainsboro;}
 	div, a, header, img, ul{ max-width: 100%; box-sizing: border-box;}
-	.grid-con {display: grid; grid-template-rows: 15vh 7.5vh auto; min-height: 100vh; font-size: 3.5vw;}
+	.grid-con {display: grid; grid-template-rows: 15vh 7.5vh auto; min-height: 100vh; font-size: 3.5vmin; overflow-x: hidden;}
 	a, img { max-height: 100%; width: auto; display: block; border: none;}
 	a { text-decoration: none; color: inherit;}
     .header {display: flex; justify-content: flex-start; background-color: lightseagreen; font-size: 3vh; height: 15vh;}
@@ -17,7 +17,7 @@
 	i { font-size: 1.33em;} 
 	.head-side-con { width: 20%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: darkslategrey;}
 	.store-link {display: flex; flex-direction: column; align-items: center;}
-	.nav-bar {display: flex; height: 7.5vh; justify-content: space-evenly; background-color: dimgray; border-top: dotted white 2px; background-color: slategrey; box-shadow: 0 5px 5px black;}
+	.nav-bar {display: flex; height: 7.5vh; justify-content: space-evenly; border-top: dotted white 2px; background-color: slategrey; box-shadow: 0 5px 5px black;}
 	.nav-wrap {flex-grow: 1; max-width: 33.33%; }
 	.nav-menu-wrap {padding: 0; margin: 0; list-style-type: none;} 
 	.nav-lab { display: flex; letter-spacing: 0vw; height: 100%; justify-content: center; align-items: center;  transition: background-color 1s, font-size 1s, color 1s, letter-spacing 1s; }
@@ -26,32 +26,129 @@
 	 
 		}
 	  50% {
-	    letter-spacing: -1.25vw;
+	    letter-spacing: -1vw;
 	  }
 	  100% {
 	    letter-spacing: 0.3vw;
 		}
 		}
-	.nav:checked ~ label { background-color: teal; animation-duration: 2s; animation-name: lettersinout; color: white; letter-spacing: 0.3vw;}
+	.nav:checked ~ .nav-lab { background-color: teal; animation-duration: 2s; animation-name: lettersinout; color: white; letter-spacing: 0.3vw;}
 	.nav { display: none; }
 	.nav ~ ul { max-width: 33.33%; box-shadow: 0 5px 5px slateblue; position: absolute; max-height: 0; overflow-y: hidden; transition: max-width 0.5s ease-in-out, max-height 1s ease-in-out 0.85s, opacity 0.8s ease-in-out 1.25s, background-color 1s ease-in-out; width: 50%; display: flex; flex-direction: column; opacity: 0; border-radius: 0 0 50px 0; border: solid dimgrey 2px; border-top: 0; background-color: slategrey;}	
 	.nav:checked ~ ul { max-width: 45%; max-height: 250px; opacity: 1; background-color: lightseagreen; transition: max-width 0.5s ease-in-out 1.625s, max-height 1s ease-in-out 0.85s, opacity 0.8s ease-in-out 0.85s, background-color 1s ease-in-out; }
 	.nav ~ ul > li { padding: 0 10%; max-height: 250px; overflow-y: hidden; transition: max-height 2s ease-in-out 1s, padding 0.8s ease-in-out 1s; }
 	.nav:checked ~ ul > li{max-height: 250px; padding: 10%;}
-	.main-sec { display: flex; flex-direction: column; justify-content: flex-start;}
-	.main-sec-wrap { margin-top: 6.25vh; width: 80%; margin: 6.25vh auto 0 auto; height: auto; }
-	.main-sec { background-color: whitesmoke;}
-	.sec-head {box-shadow: 2px 2px 5px; color: darkslategrey; height: 5vh; display: flex; align-items: center; justify-content: flex-start; padding-left: 5%; background-color: lightseagreen;}
-	.text-sec {box-shadow: 2px 2px 5px; min-height: 50vh; border: solid 1px slategrey; border-top: 0;}
+	.sec { display: flex; flex-direction: column; justify-content: flex-start; margin-bottom: 5vh;}
+	.main-sec-wrap { height: auto; }
+	.sec { background-color: whitesmoke; margin: 5vh auto; width: 80%;}
+	.sec-head {box-shadow: 2px 2px 5px; color: darkslategrey; height: 5vh; display: flex; align-items: stretch; justify-content: flex-start; padding-left: 5%; background-color: lightseagreen;}
+	.text-sec-wrap {box-shadow: 2px 2px 5px; min-height: 25vh; border: solid 1px slategrey; border-top: 0; padding: 2.5% 5%; box-sizing: border-box;}
 	.head-icon-wrap { display: flex; align-items: center; justify-content: center; padding-right: 5%; }
 	.head-icon-wrap > i { font-size: 1.375em !important;}
 	 h1 { font-size: 1em; }
 	.nav-3-lab ~ ul { right: 0; border-radius: 0 0 0 50px; padding-left: 5%;}
+	.false-in { display: none; }
+	.tab-sec { display: none; }
+	.tab-1-in:checked + .tab-1-sec {display: block; }
+	.tab-head { padding: 0; text-align: center; background-color: transparent; width: 80vw; font-size: 0.875em;}
+	.tab { background-color: lightseagreen; opacity: 0.5; vertical-align: middle; transition: all 1s; flex-grow: 1; }
+	.tab-1-in:checked ~ .tab-head > .tab-1 { opacity: 1;}
+	.tab-2-in:checked ~ .tab-head > .tab-2 { opacity: 1;}
+	.tab-3-in:checked ~ .tab-head > .tab-3 { opacity: 1;}
+	.tab-1-in:checked ~ .tab-1-sec { display: block;}
+	.tab-2-in:checked ~ .tab-2-sec { display: block;}
+	.tab-3-in:checked ~ .tab-3-sec { display: block;}
+	.tab > .tab-h-wrap {height: 100%; }
+	.deselect { position: absolute; height: 7.5vh; width: 33.33%; display: none;}
+	.nav:checked ~ .deselect { display: block;}
+	.tab-sec { margin-bottom: 0; margin: 0; width: 100%;}
+    .pcar { z-index: 1; overflow-x: hidden; width: 80%; margin: auto; box-shadow: 2px 2px 5px; min-height: 25vh; border: solid 1px slategrey; background-color: white; display: flex; margin-bottom: 5vh; }
+	.pcar-wrap { overflow-x: hidden; }
+	.con-wrap { width: 20%; display: flex; justify-content: center; align-items: center;}
+	.prod-sec { width: 60%; display: flex; overflow: hidden;}
+	.prod-sec-inner-wrap { max-width: none; width: auto; display: inline-flex; flex: 1 0 auto; }
+	.prod { background-image: url("https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png"); background-size: cover; width: 48vw; margin: 0; height: 70%; position: relative;}
+	.prod-wrap { z-index: 2; display: flex; width: 48vw; flex-direction: column; justify-content: center; align-items: center; position: relative; right: 0; transition: right 1s;}
+	.prod-7-wrap { right: 100%; }
+	.prod-2-wrap { display: flex; }
+	.nothing-label { overflow-x: hidden; }
+	.con { display: none; }
+	.pcar-in-1:checked ~ .pcar > .lcon-wrap > .lcon-1 { display: block; }
+	.pcar-in-1:checked ~ .pcar > .rcon-wrap > .rcon-1 { display: block; }
+	.pcar-in-1:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { display: flex;}
+	.pcar-in-1:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { display: flex; }			
+	.pcar-in-1:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { transition: all 0s; display: flex; right: 100%;}
+	.pcar-in-1:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { right: 100%; }	
+	.pcar-in-1:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { transition: all 0s; }		
+	.pcar-in-2:checked ~ .pcar > .lcon-wrap > .lcon-2 { display: block; }
+	.pcar-in-2:checked ~ .pcar > .rcon-wrap > .rcon-2 { display: block; }	
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { display: flex; right: 14.28%;}
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-3-wrap { display: flex; right: 14.28%;}
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { display: flex; right: 14.28%;}
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { display: flex; right: 14.28%;}
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { transition: all 0s; display: flex; right: 100%; }	
+	.pcar-in-2:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { transition: all 0s; display: flex; right: 0;}
+	.pcar-in-3:checked ~ .pcar > .lcon-wrap > .lcon-3 { display: block; }
+	.pcar-in-3:checked ~ .pcar > .rcon-wrap > .rcon-3 { display: block; }	
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-3-wrap { display: flex; right: 28.56%;}
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { display: flex; right: 28.56%;}
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { display: flex; right: 28.56%;}
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { display: flex; right: 28.56%;}
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { right: 28.56%; }	
+	.pcar-in-3:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { transition: all 0s;}	
+	.pcar-in-4:checked ~ .pcar > .lcon-wrap > .lcon-4 { display: block; }
+	.pcar-in-4:checked ~ .pcar > .rcon-wrap > .rcon-4 { display: block; }		
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { display: flex; right: 42.84%;}
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { display: flex; right: 42.84%;}
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { display: flex; right: 42.84%;}
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-3-wrap { display: flex; right: 42.84%;}
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { opacity: 0; display: flex; right: 100%; }	
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { opacity: 0; display: flex; right: 100%;}		
+	.pcar-in-4:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { transition: all 0s; }
+	.pcar-in-5:checked ~ .pcar > .lcon-wrap > .lcon-5 { display: block; }
+	.pcar-in-5:checked ~ .pcar > .rcon-wrap > .rcon-5 { display: block; }		
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { display: flex; right: 57.12%;}
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { display: flex; right: 57.12%;}
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { display: flex; right: 57.12%;}
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-3-wrap { transition: all 0s; display: flex; right: 100%; }	
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { transition: all 0s; opacity: 0; display: flex; right: 0; }
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { transition: all 0s; opacity: 0; display: flex; right: -42.84%; }	
+	.pcar-in-5:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { right: 57.12%; transition: all 0s; }
+	.pcar-in-6:checked ~ .pcar > .lcon-wrap > .lcon-6 { display: block; }
+	.pcar-in-6:checked ~ .pcar > .rcon-wrap > .rcon-6 { display: block; }		
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { display: flex; right: 71.40%;}
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { display: flex; right: 71.40%;}
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { display: flex; right: -28.56%;}
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { display: flex; right: 71.40%;}
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { opacity: 0; display: flex; right: 100%; }	
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-3-wrap { opacity: 0; display: flex; right: 0; right: 0;}	
+	.pcar-in-6:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { transition: all 0s; }	
+	.pcar-in-7:checked ~ .pcar > .lcon-wrap > .lcon-7 { display: block; }
+	.pcar-in-7:checked ~ .pcar > .rcon-wrap > .rcon-7 { display: block; }		
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-7-wrap { display: flex; right: 85.68%;}
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-1-wrap { display: flex; right: -14.28%;}
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-2-wrap { transition: all 0s; display: flex; right: -28.56%;}
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-6-wrap { display: flex; right: 85.68%;}
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-5-wrap { opacity: 0; display: flex; right: 100%; }	
+	.pcar-in-7:checked ~ .pcar > .prod-sec > .prod-sec-inner-wrap > .prod-4-wrap { opacity: 0; display: flex; right: 0; right: 0;}		
+	.p-desc { text-align: center; margin-bottom: 0; }
+	.p-price { text-align: center; margin: 0; }
+	@media (orientation: landscape) {
+	  .grid-con { grid-template-rows: 17.5vh 10vh auto; }
+	  .header { height: 17.5vh; }
+	  .nav-bar { height: 10vh; }
+	  .sec { margin: 10vh auto; }
+	  .sec-head { height: 10vh; }
+	  .text-sec-wrap { min-height: 50vh; }
+	  
+	  }
 	</style>
 
   </head>
-  <body>
-    <div class="grid-con" itemscope itemtype="http://schema.org/product">
+  <body itemscope itemtype="http://schema.org/product">
+    <label for="nothing" class="nothing-label">
+	<input class="false-in" name="cur" id="nothing" type="radio"/>
+    <div class="grid-con" >
 	  <header class="header">
 	    <div class="head-side-con">
 		  <i class="material-icons">
@@ -77,7 +174,10 @@
 	  <nav class="nav-bar">
 	    <div class="nav-wrap nav-1-wrap">
 		  <input class="nav" id="nav-1" type="radio" name="cur"></input>
-	  	  <label for="nav-1" class="nav-1-lab nav-lab"><span>Shop Categories</span></label>
+		  <label class="deselect" for="nothing"></label>
+	  	  <label for="nav-1" class="nav-1-lab nav-lab"><span>
+		    Shop Categories</span>
+		  </label>
 	        <ul class="nav-menu-wrap nav-menu-1-wrap">
 		      <li class="nav-1-el nav-el"><a href="">PS4</a></li>
 		      <li class="nav-1-el nav-el"><a href="">Xbox One</a></li>
@@ -87,7 +187,10 @@
 		</div>
 	    <div class="nav-wrap nav-2-wrap">
 		  <input class="nav" id="nav-2" type="radio" name="cur"></input>
-	  	  <label for="nav-2" class="nav-2-lab nav-lab">Shop Categories</label>
+		  <label class="deselect" for="nothing"></label>
+	  	  <label for="nav-2" class="nav-2-lab nav-lab">
+		    <span>Shop Categories</span>
+	      </label>
 	        <ul class="nav-menu-wrap nav-menu-2-wrap">
 		      <li class="nav-2-el nav-el"><a href="">PS4</a></li>
 		      <li class="nav-2-el nav-el"><a href="">Xbox One</a></li>
@@ -97,7 +200,10 @@
 		</div>
 		<div class="nav-wrap nav-3-wrap">
 		  <input class="nav" id="nav-3" type="radio" name="cur"></input>
-	  	  <label for="nav-3" class="nav-3-lab nav-lab">Shop Categories</label>
+		  <label class="deselect" for="nothing"></label>
+	  	  <label for="nav-3" class="nav-3-lab nav-lab">
+		    <span>Shop Categories</span>
+		  </label>
 	        <ul class="nav-menu-wrap nav-menu-3-wrap">
 		      <li class="nav-3-el nav-el"><a href="">PS4</a></li>
 		      <li class="nav-3-el nav-el"><a href="">Xbox One</a></li>
@@ -107,11 +213,184 @@
 		</div>
 	  </nav>
 	  <main class="main-sec-wrap">
-	    <section class="main-sec">
+	    <section class="main-sec sec">
 		  <header class="sec-head desc-head"><span class="head-icon-wrap"><i class="material-icons">info</i></span>
 		  <h1>Product Description:</h1></header>
-		  <div class="text-sec desc-text">
+		  <div class="text-sec-wrap desc-text-wrap">
+		    <p class="text-sec desc-text" property="description"><b><u>About this item:</b></u><br>
+Raise the dead with Retrodog's range of super-soft silicone skull skins for PS4 Controllers, allowing you to customise your PS4 controller the way you want it. 
+
+These skins will protect your controller from dirt build up, enhance your grip, allow easy access to all buttons and ports, prevent sweating and help to protect against knocks and bumps.
+
+The unique designs of these grips will add a stylish look to your controller. Plus, they just look damn cool. Coming in 4 different colours, all you have to decide is which skin looks best. 
+
+To fit this PS4 controller skin, all you have to do is slip it on and slip it off. Instant.  Please note that the display settings of your monitor may impact the actual appearance of the item.
+
+Compatibility:
+These skins will fit all Sony PS4 Controllers: original, pro and slim.</p>
 		  </div>
 		</section>
-	  </main>
+		<section class="main-sec sec">
+		  <input name="tab" id="tab-1" type="radio" class="false-in tab-1-in" checked />
+		  <input name="tab" id="tab-2" type="radio" class="false-in tab-2-in" />
+		  <input name="tab" id="tab-3" type="radio" class="false-in tab-3-in" />
+		  <header class="sec-head tab-head">
+		    <label class="tab tab-1" for="tab-1">
+		        <div class="tab-h-wrap">Product Description</div>
+			</label>
+			<label class="tab tab-2" for="tab-2">
+		      <div class="tab-h-wrap">Product Description</div>
+			</label>
+			<label class="tab tab-3" for="tab-3">
+		      <div class="tab-h-wrap">Product Description</div>
+			</label>
+		  </header>
+		  <section class="text-sec-wrap tab-sec sec tab-1-sec">
+		    <p class="text-sec tab-1-text">a</p>
+		  </section>
+		  <section class="text-sec-wrap tab-sec sec tab-2-sec">
+		    <p class="text-sec tab-2-text">b</p>
+		  </section>
+		  <section class="text-sec-wrap tab-sec sec tab-3-sec">
+		    <p class="text-sec tab-3-text">c</p>
+		  </section>
+		</section>
+	  </main>	  
+      <aside class="pcar-wrap">
+		  <input class="pcar-in pcar-in-1 false-in" type="radio" id="pcar-1" name="pcar" checked />
+		  <input class="pcar-in pcar-in-2 false-in" type="radio" id="pcar-2" name="pcar" />		
+		  <input class="pcar-in pcar-in-3 false-in" type="radio" id="pcar-3" name="pcar" />
+		  <input class="pcar-in pcar-in-4 false-in" type="radio" id="pcar-4" name="pcar" />		
+		  <input class="pcar-in pcar-in-5 false-in" type="radio" id="pcar-5" name="pcar" />		
+		  <input class="pcar-in pcar-in-6 false-in" type="radio" id="pcar-6" name="pcar" />
+		  <input class="pcar-in pcar-in-7 false-in" type="radio" id="pcar-7" name="pcar" />			  
+	    <div class="pcar"> 			  
+		  <div class="con-wrap lcon-wrap">
+		    <label class="con lcon lcon-1" for="pcar-7">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>
+		    <label class="con lcon lcon-2" for="pcar-1">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>		
+		    <label class="con lcon lcon-3" for="pcar-2">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>
+		    <label class="con lcon lcon-4" for="pcar-3">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>		
+		    <label class="con lcon lcon-5" for="pcar-4">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>		
+		    <label class="con lcon lcon-6" for="pcar-5">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>
+		    <label class="con lcon lcon-7" for="pcar-6">
+			  <i class="material-icons">
+				chevron_left
+			  </i>
+			</label>	
+          </div>
+          <div class="prod-sec">
+		    <div class="prod-sec-inner-wrap">
+            <a href="" class="prod-wrap prod-1-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-1"></img>
+			  <div class="prod-text prod-text-1">
+			    <p class="p-desc p-desc-1">This is the title</p>
+				<p class="p-price p-price-1">£9.99</p>
+			  </div>
+			</a>
+            <a href="" class="prod-wrap prod-2-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-2"></img>
+			  <div class="prod-text prod-text-2">
+			    <p class="p-desc p-desc-2"></p>
+				<p class="p-price p-price-2"></p>
+			  </div>
+			</a>		    
+            <a href="" class="prod-wrap prod-3-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-3"></img>
+			  <div class="prod-text prod-text-3">
+			    <p class="p-desc p-desc-3"></p>
+				<p class="p-price p-price-3"></p>
+			  </div>
+			</a>
+            <a href="" class="prod-wrap prod-4-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-4"></img>
+			  <div class="prod-text prod-text-4">
+			    <p class="p-desc p-desc-4"></p>
+				<p class="p-price p-price-4"></p>
+			  </div>
+			</a>	
+            <a href="" class="prod-wrap prod-5-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-5"></img>
+			  <div class="prod-text prod-text-5">
+			    <p class="p-desc p-desc-5"></p>
+				<p class="p-price p-price-5"></p>
+			  </div>
+			</a>		    
+            <a href="" class="prod-wrap prod-6-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-6"></img>
+			  <div class="prod-text prod-text-6">
+			    <p class="p-desc p-desc-6"></p>
+				<p class="p-price p-price-6"></p>
+			  </div>
+			</a>
+            <a href="" class="prod-wrap prod-7-wrap">
+			  <img src="https://i.ebayimg.com/images/g/s2QAAOSwTR9drupd/s-l1600.png" class="prod prod-7"></img>
+			  <div class="prod-text prod-text-7">
+			    <p class="p-desc p-desc-7"></p>
+				<p class="p-price p-price-7"></p>
+			  </div>
+			</a>
+		  </div>
+          </div>	
+		  <div class="rcon-wrap con-wrap">
+		    <label class="con rcon rcon-1" for="pcar-2">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>
+		    <label class="con rcon rcon-2" for="pcar-3">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>		
+		    <label class="con rcon rcon-3" for="pcar-4">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>
+		    <label class="con rcon rcon-4" for="pcar-5">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>		
+		    <label class="con rcon rcon-5" for="pcar-6">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>		
+		    <label class="con rcon rcon-6" for="pcar-7">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>
+		    <label class="con rcon rcon-7" for="pcar-1">
+			  <i class="material-icons">
+				chevron_right
+			  </i>
+			</label>	
+          </div>		  
+	    
 
